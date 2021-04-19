@@ -15,7 +15,7 @@ public class Program3
     {
 
         int a = 20;
-        int b = 15,
+        int b = 15;
 
         double rainfall = a/b;  // basic division
         string year = "The year was: " + a + b; // String concatenation
