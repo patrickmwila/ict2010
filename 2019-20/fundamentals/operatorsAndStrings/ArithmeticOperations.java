@@ -44,7 +44,6 @@ public class ArithmeticOperations
       System.out.println("Is it windy today: " + var_is_windy);
       
       var_is_windy = false;
-
    }
 
 }
