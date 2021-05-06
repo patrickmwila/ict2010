@@ -14,13 +14,13 @@ public class StringConcatenation
     public static void main(String[] args)
     {
         // Declare a variable firstname and initialise it a value(your firstname)
-        String var_firstname = "Patrick ";
+        String var_firstname = "Harold ";
 
         // Display the value of var_firstname to the screen
         System.out.printf("Firstname: %s", var_firstname);
 
         // Declare a variable lastname and initialise it a value(your lastname)
-        String var_lastname = "Mwila"; 
+        String var_lastname = "Finch"; 
 
         // Display the value of var_lastname to the screen
         System.out.printf("\nLastname: %s", var_lastname);
