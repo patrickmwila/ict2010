@@ -18,7 +18,6 @@ public class TypeCasting
 {
    public static void main(String[] args)
    {
-     Scanner keyboard = new Scanner(System.in);
     // Widening (implicit) casting is done automatically when passing a smaller size type to a larger size type:
     int myInt = 9;
     double myDouble = myInt; // Automatic casting: int to double
@@ -45,18 +44,6 @@ public class TypeCasting
     // double k = Double.parseDouble("3.142");
     
     String phoneNumber = "0972338617";
-   // System.out.print("Enter the value of pie up to 3 d.p: ");
-    
-    //String var_pie = keyboard.nextLine();
-    
-   // int var_pie_casted = (int)(var_pie);
-    int new_num = Integer.parseInt(phoneNumber) ;
-        
-    System.out.println(new_num / new_num); 
-    
-    
-    double d=89.7;
-    String s=Double.toString(d);
-    System.out.println("my favourite decimal number is: " + s); 
+    System.out.println(Integer.parseInt(phoneNumber)) ;
     }
 }
