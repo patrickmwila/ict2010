@@ -39,7 +39,6 @@ public class AssignmentOperators
         System.out.printf("Dividing the new value by %d we get: ", var_num1 );
         System.out.println("\n" + var_num);
 
-
         var_num %= var_num1;
         System.out.printf("Finding the remainder of %d / %d we get: ", var_num, var_num1);
         System.out.println("\n" + var_num);
