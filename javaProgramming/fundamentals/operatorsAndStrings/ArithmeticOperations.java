@@ -9,13 +9,17 @@ public class ArithmeticOperations
    // main method begins the execution of a java application
    public static void main(String[] args)
    {
-      // Java can be used to perform calculations using arithmetic operators( +, -, *, /, %(modulus))
+      // Java can be used to perform calculations using arithmetic 
+      // operators( +, -, *, /, %(modulus))
       // The addition (+) operator
       
       int var_num1 = 100;   // declare and initialise var_num1
       int var_num2 = 26;    // declare and initialise var_num2
       
-      int var_sum = var_num1 + var_num2; // declare var_sum and initialise it with the result of var_num1 + var_num2
+      int var_sum = var_num1 + var_num2; // declare var_sum and initialise 
+                                         // it with the result of var_num1 + 
+                                         // var_num2
+                                         
       System.out.println(var_sum);       // display the value of var_sum
       
       // The subtraction (-) operator
@@ -33,7 +37,7 @@ public class ArithmeticOperations
       double var_div = var_num1 / var_num2;
       System.out.println(var_div);
       
-      // The modulus (%) operator (returns the reminder of an arithmetic operation)
+      // The modulus (%) operator (returns the remainder)
       // 
       double var_mod = var_num1 % var_num2;
       System.out.println(var_mod);
