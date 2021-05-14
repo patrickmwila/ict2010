@@ -17,7 +17,7 @@ public class Program4
         // Use a String method to display the value of mall2 in all uppercase
         // characters
 
-        System.out.println(fullname.toUpperCase());
+        System.out.println(mall2.toUpperCase());
 
         // Use the length method to display the number of characters in the
         // fullname variable

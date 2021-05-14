@@ -13,8 +13,8 @@ public class ArithmeticOperations
       // operators( +, -, *, /, %(modulus))
       // The addition (+) operator
       
-      int var_num1 = 100;   // declare and initialise var_num1
-      int var_num2 = 26;    // declare and initialise var_num2
+      int var_num1 = 7876876;   // declare and initialise var_num1
+      int var_num2 = 7885;    // declare and initialise var_num2
       
       int var_sum = var_num1 + var_num2; // declare var_sum and initialise 
                                          // it with the result of var_num1 + 
@@ -44,10 +44,10 @@ public class ArithmeticOperations
 
       // The boolean operator returns true or false
       //
-      boolean var_is_windy = true;
-      System.out.println("Is it windy today: " + var_is_windy);
-      
-      var_is_windy = false;
+     //  boolean var_is_windy = true;
+//       System.out.println("Is it windy today: " + var_is_windy);
+//       
+//       var_is_windy = false;
    }
 
 }

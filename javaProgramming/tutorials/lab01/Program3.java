@@ -28,7 +28,5 @@ public class Program3
         double rainfall = a/b; // basic division
         String year = "The year was: " + a + b; // String concatenation
         System.out.println(year);
-        String name = "rick";
-        System.out.println(name.substring(1));
     }
 }
