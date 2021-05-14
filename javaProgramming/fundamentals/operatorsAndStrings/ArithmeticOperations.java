@@ -43,11 +43,11 @@ public class ArithmeticOperations
       System.out.println(var_mod);
 
       // The boolean operator returns true or false
-      //
-     //  boolean var_is_windy = true;
-//       System.out.println("Is it windy today: " + var_is_windy);
-//       
-//       var_is_windy = false;
+      
+      boolean var_is_windy = true;
+      System.out.println("Is it windy today: " + var_is_windy);
+      
+      var_is_windy = false;
    }
 
 }
