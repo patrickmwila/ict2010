@@ -10,11 +10,14 @@ public class StringComparisons
 {
     public static void main(String [] args)
     {
-        // equals() -- used to compare two string variables
+        // equals() -- used to compare two string variables 
+        // returns true / false
         String str1 = "Rob",
                str2 = "Rob";
         
-        if (str1.equals(str2))
+        boolean flagTrue = str1.equals(str2);
+
+        if (flagTrue)
         {
             System.out.printf("%s = %s\n", str1, str2);
         }
@@ -28,7 +31,9 @@ public class StringComparisons
         String str3 = "Shadreck",
                str4 = "SHADreck";
 
-        if (str3.equalsIgnoreCase(str4))
+        boolean flagTrue2 = str3.equalsIgnoreCase(str3);
+
+        if (flagTrue2)
         {
             System.out.printf("\n%s = %s regardless of the letter case.\n",
                              str3, str4);

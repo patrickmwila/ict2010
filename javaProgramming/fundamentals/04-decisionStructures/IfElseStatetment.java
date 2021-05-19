@@ -31,7 +31,9 @@ public class IfElseStatetment
         int userNum = Integer.parseInt(userNumStr); // convert userNumStr to int
 
         // check if userNum is even or old and display the message to the user
-        if (userNum % 2 == 0)
+        boolean evenFlag = (userNum % 2 == 0);
+
+        if (evenFlag)
         {
             JOptionPane.showMessageDialog(null, userNum + messageEven,
                                          messageTitle,
