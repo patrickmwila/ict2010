@@ -7,19 +7,37 @@
  */
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class MxMmatrix
 {
-    public static void main(String [] args)
+    public static void main(String [] args) 
     {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("========== (MxM) Matrix Calculator ==========\n");
-
-        int user_num; // declare user_num 
-        do
+        int user_num = 0;
+        boolean var_quit_flag = true;
+        
+        while (var_quit_flag)
         {
-            System.out.print("Enter an old number (enter 0 to quit): "); // prompt the user for input
-            user_num = keyboard.nextInt();
+        
+            while (true) 
+            {
+            
+                System.out.print("Enter an old number (enter 0 to quit): "); // prompt the user for input
+                
+                try
+                    {
+                    
+                        user_num = keyboard.nextInt();
+                    }
+
+                catch (InputMismatchException ex)
+                    {
+                        System.out.println("Invalid Input! NOT A NUMBER");
+                        continue;
+                    }
+            }
 
             if (user_num != 0)
             {
@@ -53,14 +71,13 @@ public class MxMmatrix
                 } // end of loop row
             } // end of major decision block
 
-            else
+            else if (user_num == 0)
             {
-                continue;
+                var_quit_flag = false;
             }
-
-        } while(user_num != 0); // end of do while loop
-
-        System.out.println("\nGoodbye!");
+        }
+        
+        System.out.println("Goodbye!");
 
     }// end of method main
 } // end of class MxMmatrix

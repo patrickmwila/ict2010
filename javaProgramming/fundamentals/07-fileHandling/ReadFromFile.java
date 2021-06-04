@@ -51,7 +51,7 @@ public class ReadFromFile
         while (var_read_file.hasNextLine()) 
         {
             var_file_content = var_read_file.nextLine();
-        System.out.println(var_file_content);
+            System.out.println(var_file_content);
         }
 
         var_read_file.close(); // stop reading from the file
