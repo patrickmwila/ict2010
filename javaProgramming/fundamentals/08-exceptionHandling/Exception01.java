@@ -18,6 +18,7 @@
 //
 import java.util.Scanner;                // will be used to read a file
 import javax.swing.JOptionPane;          // will be used to display an error message
+
 import java.io.IOException;              // will be used to throw File Not Found exception
 import java.io.FileReader;               // will be used to read a file
 

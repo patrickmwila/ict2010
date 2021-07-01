@@ -39,23 +39,23 @@ public class MxMmatrix
                     }
             }
 
-            if (user_num != 0)
+            if (!(user_num == 0))
             {
                 int row = 1;
                 while (row < user_num)
                 {
                     for(int col = 1; col < user_num; col++)
                     {
-                        if (col == 1)
+                        if (col == 1) // display 1's in the first col
                         {
                             System.out.print(1); // disp
                         }
                 
-                        else if (row == col)
+                        else if (row == col) // display a diagonal of 1's
                         {
                             System.out.print(1);
                         }
-                        else if (col == (user_num - 1))
+                        else if (col == (user_num - 1)) // display the 1's in the last col
                         {
                             System.out.print(1);
                         }
