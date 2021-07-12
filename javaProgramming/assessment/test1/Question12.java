@@ -16,14 +16,23 @@ public class Question12
         FileReader var_file = new FileReader("names.txt");  // open names.txt
         Scanner var_input_file = new Scanner(var_file);           // read from var_file
 
+        // declare necessary variables
+        String var_name = null;
+        int var_id = 0;
+
         // create a loop that enables us to display contents of names.txt
         while (var_input_file.hasNext())
         {
-            System.out.println(var_input_file.nextLine());
-        }
+            var_name = var_input_file.next();
+            var_id = var_input_file.nextInt();
 
+            if (var_id < 20100)
+            {
+                System.out.println(var_name + "\t" + var_id);
+            }
+        }
         
-        var_file.close();       // close var_file
+        var_file.close();       // close var_filem
         var_input_file.close(); // stop reading from var_file
     }
 }
