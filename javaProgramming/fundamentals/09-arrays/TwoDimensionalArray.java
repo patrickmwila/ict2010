@@ -20,10 +20,10 @@ public class TwoDimensionalArray
         String[][] var_students = {{"John", "2019037459", "code"}, {"Kim", "2019037455"}}; // declare and initialize a 2D array
 
         // declare a default 2D array
-        int[][] var_matrix = new int[10][10]; //3--> three 1D arrays, 2--> two values withing each 1D array
+        int[][] var_matrix = new int[10][10];           // 3--> three 1D arrays, 2--> two values withing each 1D array
 
-        System.out.println(var_students.length); // returns 2 as we have 2, 1D arrays
-        System.out.println(var_students[0].length); // returns 3 as we have 3 elements in the first 1D arrays
+        System.out.println(var_students.length);        // returns 2 as we have 2, 1D arrays
+        System.out.println(var_students[0].length);     // returns 3 as we have 3 elements in the first 1D arrays
 
         System.out.println();
 
