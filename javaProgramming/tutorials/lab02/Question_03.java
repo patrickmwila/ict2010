@@ -23,8 +23,15 @@ public class Question_03
 
         // prompt for user input
         System.out.print("Please enter the number of tests written: ");
+
+       // convert the number of tests to int
         num_of_tests = keyboard.nextInt();
 
+        // declare a string to hold output message
+        String str;
+
+       // pompt the user based on the following conditions
+       // and then display the required results
         if (num_of_tests == 2)
         {
             System.out.print("Please enter a mark for test 1: ");
@@ -33,8 +40,12 @@ public class Question_03
             System.out.print("Please enter a mark for test 2: ");
             test_02 = keyboard.nextInt();
 
+            // calculate the average and format the format storing it in str
             average_score = (test_01 + test_02) / 2;
-            System.out.printf("Your average is %.2f\n", average_score);
+            str = String.format("Your average is %.1f", average_score);
+
+            // display the average
+            System.out.println(str + "%");
         }
 
         else if(num_of_tests == 3)
@@ -48,8 +59,12 @@ public class Question_03
             System.out.print("Please enter a mark for test 2: ");
             test_03 = keyboard.nextInt();
 
+            // calculate the average and format the format storing it in str
             average_score = (test_01 + test_02 + test_03) / 3; 
-            System.out.printf("Your average is %.2f\n", average_score);
+            str = String.format("Your average is %.1f", average_score);
+
+            // display the average
+            System.out.println(str + "%");
         }
 
         else 
