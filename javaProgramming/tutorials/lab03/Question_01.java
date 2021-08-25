@@ -27,7 +27,7 @@ public class Question_01
         num2 = keyboard.nextDouble();
 
         System.out.print(
-            "Please enter the operator" + 
+            "\nPlease enter the operator" + 
             "\n(+, -, /, or *): "
         );
         operator = keyboard.next();
@@ -37,31 +37,31 @@ public class Question_01
         {
             case "+":
                 System.out.printf(
-                        "%.1f + %.1f = " + (num1 + num2), num1, num2
+                        "\n%.1f + %.1f = " + (num1 + num2), num1, num2
                 );
                 break;
 
             case "-":
                 System.out.printf(
-                        "%.1f - %.1f = " + (num1 - num2), num1, num2
+                        "\n%.1f - %.1f = " + (num1 - num2), num1, num2
                 );
                 break;
 
             case "/":
                 System.out.printf(
-                        "%.1f / %.1f = " + (num1 / num2), num1, num2
+                        "\n%.1f / %.1f = " + (num1 / num2), num1, num2
                 );
                 break;
 
             case "*":
                 System.out.printf(
-                        "%.1f * %.1f = " + (num1 * num2), num1, num2
+                        "\n%.1f * %.1f = " + (num1 * num2), num1, num2
                 );
                 break;
 
             default:
-                System.out.println("Invalid operator detected!");
-                break;
+                System.out.println("\nInvalid operator detected!");
+                System.exit(-1);
         }
 
         // display a blank line for readability
