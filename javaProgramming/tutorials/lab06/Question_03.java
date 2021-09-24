@@ -13,6 +13,7 @@ public class Question_03
         // a Scanner object for getting input from the keyboard
         Scanner keyboard = new Scanner(System.in);
 
+        // variable declarations
         double a, b, c, root1, root2;
 
         // prompt for user input

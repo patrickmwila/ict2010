@@ -13,6 +13,7 @@ public class Question_02
         // a Scanner object for getting input from the keyboard
         Scanner keyboard = new Scanner(System.in);
 
+        // variable declarations
         double a, b;
 
         System.out.print("\nEnter first number: ");
@@ -26,6 +27,7 @@ public class Question_02
             "\nThe minimun between %.1f and %.1f = %.1f" +
             "\nThe distance between %.1f and %.1f = %.1f units" +
             "\nThe exponent value of %.1f to the power of %.1f ≈ %.3f\n",
+
             a, b, Math.min(a, b), a, b, Math.abs(a-b), a, b, Math.pow(a, b)
         );
     }
