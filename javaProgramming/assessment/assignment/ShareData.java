@@ -1,6 +1,6 @@
 /**
  * Author      : Banda Esther - 2019002922 & Mwila Patrick - 2019037459
- * Instructor  : Pheyela Mbewe
+ * Instructor  : Phyela Mbewe
  * Date        : 27-09-2021
  * Description : A program that allows mobile phone users to send data to other users
  */
