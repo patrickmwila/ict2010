@@ -1,12 +1,13 @@
 /**
- * Author      : Banda Esther  - 2019002922
- *             : Mwila Patrick - 2019037459
+ * Authors     : Mwila Patrick - 2019037459
+ *             : Banda Esther  - 2019002922
  * Instructor  : Phyela Mbewe
  * Due Date    : 08-10-2021
  * Description : A program that displays all the odd numbers from 1 up to a 
  *               user-entered integer value in a specific format.
  */
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class OddSequence
 {
@@ -18,12 +19,21 @@ public class OddSequence
         System.out.println(
             "Please enter your number"
         );
-        int userNum = keyboard.nextInt();
+
+        int userNum = 0;
+
+        try
+        {
+            userNum = keyboard.nextInt();
+        }
+        catch (InputMismatchException ex)
+        {
+            System.out.println("Invalid input!");
+            System.exit(0);
+        }
 
         do
         {
-
-
             // use a loop to get total value of old numbers from 1 up to userNum
             int totalOldNums = 0;
             for (int num = 1; num <= userNum; num++)
@@ -50,12 +60,11 @@ public class OddSequence
                 }
             }
 
-            // use a loop to display all the old numbers store in oldNums array 
-            // in a specific format.
-            //
-            // Notation: i --> index and col --> column
-            //
-
+            /*
+               use a loop to display all the old numbers stored in oldNums array 
+               in a specific format.
+               Notation: i --> index and col --> column
+             */
             int sumOfOldNums = 0;         // accumulator to hold sum of old numbers
             for (int i = 0, col = 0; i < oldNums.length; i++, col++)
             {
@@ -123,8 +132,18 @@ public class OddSequence
             System.out.println(
                 "\nPlease enter your number (or 0 to quit)" 
             );
-            userNum = keyboard.nextInt();
+
+            try
+            {
+                userNum = keyboard.nextInt();
+            }
+            catch (InputMismatchException ex)
+            {
+                System.out.println("Invalid input!");
+                System.exit(0);
+            }
       
         }while (userNum != 0);
+
     } // end of method main
 }

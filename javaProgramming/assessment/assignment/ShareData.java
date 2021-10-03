@@ -1,17 +1,18 @@
 /**
- * Author      : Banda Esther  - 2019002922
- *             : Mwila Patrick - 2019037459
+ * Authors     : Mwila Patrick - 2019037459
+ *             : Banda Esther  - 2019002922
  * Instructor  : Phyela Mbewe
- * Date        : 27-09-2021
+ * Due Date    : 08-09-2021
  * Description : A program that allows mobile phone users to send data to other users
  */
+
 import java.util.Scanner;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.text.SimpleDateFormat;
 
 import java.io.File;
 import java.io.IOException;
-
 
 public class ShareData 
 {
@@ -20,6 +21,7 @@ public class ShareData
       // create Scanner object to get input from the keyboard
       Scanner keyboard = new Scanner(System.in);
 
+      // display message, prompting for userInput...
       System.out.println (
          "Welcome to ZC mobile Data Sharing" + 
          "\n---------------------------------" +
@@ -28,16 +30,24 @@ public class ShareData
          "\n3 - Receive Free Gift" +
          "\n0 - Exit"     
       );
-      int userOpt = keyboard.nextInt();
+      int userOpt = 0;
+      try
+      {
+          userOpt = keyboard.nextInt();
+      }
 
-      // create a File Object to hold the file to be read from
+      catch (InputMismatchException ex)
+      {
+          System.out.println(
+              "Invalid option!"
+          );
+      }
+
+      // create a File Object to open the file for reading
       File file = new File("customers.txt");
 
-      // create Scanner object to read from the file 
+      // create a Scanner object to read from the file 
       Scanner inputFile = new Scanner(file);
-
-      // line variable keeps track of lines in a file
-      int line = 1;
 
       // carry out the following actions based on the option selected
       if (userOpt == 1)
@@ -46,22 +56,60 @@ public class ShareData
           keyboard.nextLine();
 
           // prompt for user input
-          System.out.println("Enter Phone Number");
+          System.out.println("\nEnter Phone Number");
           String phoneNum = keyboard.nextLine();
 
           System.out.println("Enter Data Amount in Megabytes");
-          int dataBundles = keyboard.nextInt();
+          int dataBundles = 0;
+
+          try 
+          {
+              dataBundles = keyboard.nextInt();
+          }
+
+          catch (InputMismatchException ex)
+          {
+              System.out.println(
+                  "\nInvalid data amount!"
+              );
+              System.exit(0);
+          }
 
           // read the entire file
           while (inputFile.hasNextLine())
           {
-              String str = inputFile.nextLine();
-              String strPhone = str.substring(0,7);
+              // read a line from the file, at each iteration extracting phone number
+              String line = inputFile.nextLine();
+              String strPhone = line.substring(0,7);
 
-              // compare phone number in file with user phone number
-              if (line == 1)
+              // check if user entered number is present in file
+              if (phoneNum.equals(strPhone))
               {
-                  if (phoneNum.equals(strPhone))
+                  // create Scanner object used to read firstLine only 
+                  Scanner getFirstLine = new Scanner(file);
+
+                  // get the length of the first line in the file
+                  String firstLine = getFirstLine.nextLine();
+                  int lineLength = firstLine.length();
+
+                  // get the mbs from the first line in the file and convert to int
+                  String mbs = firstLine.substring((lineLength - 3), lineLength);
+                  int mbsInt = Integer.parseInt(mbs);
+
+                  // validate data amount entered entered
+                  while (dataBundles <= 0 || dataBundles > mbsInt)
+                  {
+                      System.out.println(
+                          "\nPlease enter a valid data amount to send"
+                      );
+                      dataBundles = keyboard.nextInt();
+                  }
+
+                  // Scanner object used to read first line (again)
+                  Scanner getFirstLine2 = new Scanner(file);
+                  String line2 = getFirstLine2.nextLine();
+
+                  if (phoneNum.equals(line2.substring(0,7)))
                   {
                       System.out.println(
                           "You cannot send data to yourself"
@@ -69,22 +117,10 @@ public class ShareData
                       System.exit(0);
                   }
 
-              }
-              
-              else if (line > 1)
-              {
-                  if ( !(phoneNum.equals(strPhone)))
-                  {
-                      System.out.println(
-                          "Sorry, customer not found, data could not be sent"
-                      );
-                      System.exit(0);
-                  }
-
                   else 
                   {
-                      String name = str.substring(8, (str.length() - 4));
-                      int strLen = str.length();
+
+                      String name = line.substring(8, (line.length() - 4));
 
                       System.out.println(
                           "Success, you have sent " + dataBundles + 
@@ -93,22 +129,36 @@ public class ShareData
                       System.exit(0);
                   }
               }
-              line ++;
-          }    
+
+              /*
+                 if phone number entered != phone number on the current line 
+                 of the file, "continue" i.e check the next Line
+              */
+              else
+              {
+                  continue;
+              }
+          }
+
+          // if none of the above 'if blocks' exec, implies customer not found
+          System.out.println(
+              "Sorry, customer not found, data could not be sent"
+          );
       }
       
       else if (userOpt == 2)
       {
-
           // get the length of the first line in the file
-          String str = inputFile.nextLine();
-          int strLen = str.length();
+          String firstLine = inputFile.nextLine();
+          int lineLength = firstLine.length();
 
           // get the mbs from the first line in the file
-          String mbs = str.substring((strLen - 4), strLen);
+          String mbs = firstLine.substring((lineLength - 3), lineLength);
 
           // display the current amount of data
-          System.out.println("Your current data amount is " + mbs + "mb");
+          System.out.println(
+              "Your current data amount is " + mbs + "mb"
+          );
       }
 
       else if (userOpt == 3)
@@ -123,13 +173,17 @@ public class ShareData
           // get the first 2 values indicating the hours from sysTime
           int currentTime = Integer.parseInt(sysTime.substring(0,2));
           
-          // check if system time is between 18:00 and 21:00 hrs
+          /*
+             check if system time is between 18:00 and 21:00 hrs
+             Note: The host system time should be in 24HR FORMAT
+           */
           if (currentTime > 18 && currentTime < 21)
           {
               System.out.println(
                   "You have received 150mb of data as a free gift"
               );
           }
+
           else
           {
               System.out.println(
@@ -144,7 +198,18 @@ public class ShareData
           System.exit(0);
       }
 
-      // clear the rams buffer
+      else 
+      {
+          System.out.println(
+              "Invalid option!"
+          );
+      }
+
+      /*
+         clear the rams buffer
+         Note: all Scanner objects reading from file, referece the address of 
+         the same file object, this implies closing one will do the trick...
+      */
       inputFile.close();
       keyboard.close();
    }
