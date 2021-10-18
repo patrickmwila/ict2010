@@ -29,5 +29,21 @@ public class Main
 
         // display the balance for accountOne
         System.out.println("Balance for accountTwo is $" + balanceTwo);
+
+        // create a BankAccount object
+        BankAccount accountThree = new BankAccount();
+        System.out.println("Balance for accountThree is $" + accountThree.getBalance());
+        System.out.println("Account Three name is " + accountThree.getAccountName());
+
+
+        // create a BankAccount object
+        BankAccount accountFour = new BankAccount("2019037459", 2703.50);
+
+        System.out.println();
+        accountFour.setAccountName("UBA Africard");
+
+        System.out.println(accountFour.getAccountName());
+        System.out.println(accountFour.getAccountNumber());
+        System.out.println(accountFour.getBalance());
     }
 }

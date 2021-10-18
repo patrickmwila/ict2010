@@ -12,38 +12,6 @@ public class BankAccount
 
 
     /**
-     * Constructor
-     */
-    public BankAccount()
-    {
-        accountName = "Xapit";
-    }
-
-    /**
-     * Constructor
-     * @param aNumber The number for the BankAccount object
-     * @param aBalance The balance for the BankAccount object
-     */
-    public BankAccount(String aNumber, double aBalance)
-    {
-        accountNumber = aNumber;
-        balance       = aBalance;
-    }
-
-    /**
-     * Constructor
-     * @param aName The name for the BankAccount object
-     * @param aNumber The number for the BankAccount object
-     * @param aBalance The balance for the BankAccount object
-     */
-    public BankAccount(String accountName, String accountNumber, double balance)
-    {
-        this.accountName   = accountName;
-        this.accountNumber = accountNumber;
-        this.balance       = balance;
-    }
-
-    /**
      * The setAccountName method stores a name in the accountName field.
      * @param name is the name to be stored in the accountName field.
      */
