@@ -1,6 +1,6 @@
 /**
  * Bank Account class
- * Under construction
+ * Under construction implementing ideas of encapsulation
  */
 
 public class BankAccount
