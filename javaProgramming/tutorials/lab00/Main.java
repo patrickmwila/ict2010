@@ -1,7 +1,9 @@
 /**
  * Author     : 2019037459
- * Description: A program that implements a Caeser cipher cryptography algorithm
+ * Description: A program that implements a Caeser cipher 
+ *              cryptography algorithm
  */
+
 import javax.swing.JOptionPane;
 
 public class Main
