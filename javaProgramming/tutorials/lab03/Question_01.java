@@ -15,8 +15,8 @@ public class Question_01
         Scanner keyboard = new Scanner(System.in);
 
         // declare and initialize variables to be used
-        double num1 = 0.0,
-               num2 = 0.0;
+        double num1 = 0.0;
+        double num2 = 0.0;
         String operator = null;
 
         // prompt the user for input
